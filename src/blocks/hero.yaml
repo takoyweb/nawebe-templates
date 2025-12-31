@@ -1,0 +1,54 @@
+type: hero
+version: 1.0.0
+name: Hero Block
+description: Главный баннер с заголовком, подзаголовком и изображением
+category: header
+is_active: true
+preview: /previews/blocks/hero.png
+
+schema:
+  title:
+    type: string
+    required: true
+    default: Добро пожаловать
+    description: Главный заголовок
+  subtitle:
+    type: string
+    required: false
+    default: Ваш успех начинается здесь
+    description: Подзаголовок
+  buttonText:
+    type: string
+    required: false
+    default: Начать
+    description: Текст кнопки
+  buttonLink:
+    type: string
+    required: false
+    default: '#contact'
+    description: Ссылка кнопки
+  backgroundImage:
+    type: string
+    format: url
+    required: false
+    description: Фоновое изображение
+  alignment:
+    type: string
+    enum: [left, center, right]
+    default: center
+    description: Выравнивание текста
+  height:
+    type: string
+    enum: [small, medium, large, full]
+    default: large
+    description: Высота блока
+
+defaults:
+  title: Добро пожаловать
+  subtitle: Ваш успех начинается здесь
+  buttonText: Начать
+  buttonLink: '#contact'
+  alignment: center
+  height: large
+  backgroundImage: ''
+

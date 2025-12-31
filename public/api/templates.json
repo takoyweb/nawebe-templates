@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2025-12-31T14:52:18.545Z",
+  "count": 1,
+  "templates": [
+    {
+      "id": "c32154a5-b83b-4f7d-a242-5ee61a462139",
+      "name": "Универсальный",
+      "version": "1.0.0",
+      "description": "Универсальный шаблон для любого бизнеса. Включает основные блоки для создания полноценного сайта.",
+      "category": "business",
+      "price": 0,
+      "preview": "/previews/universal.png",
+      "is_active": true,
+      "is_system": true,
+      "blocks": [
+        "hero",
+        "services",
+        "about",
+        "features",
+        "pricing",
+        "team",
+        "testimonials",
+        "faq",
+        "contact",
+        "footer"
+      ],
+      "default_settings": {
+        "fontFamily": "Inter, system-ui, sans-serif",
+        "maxWidth": 1200,
+        "primaryColor": "#3b82f6",
+        "secondaryColor": "#8b5cf6"
+      }
+    }
+  ]
+}

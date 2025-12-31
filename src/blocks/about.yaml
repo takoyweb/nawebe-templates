@@ -1,0 +1,46 @@
+type: about
+version: 1.0.0
+name: About Block
+description: Блок "О компании" с текстом и изображением
+category: content
+is_active: true
+preview: /previews/blocks/about.png
+
+schema:
+  title:
+    type: string
+    required: true
+    default: О компании
+    description: Заголовок блока
+  content:
+    type: string
+    required: true
+    default: Расскажите о вашей компании
+    description: Основной текст
+  image:
+    type: string
+    format: url
+    required: false
+    description: Изображение
+  imagePosition:
+    type: string
+    enum: [left, right]
+    default: right
+    description: Позиция изображения
+  buttonText:
+    type: string
+    required: false
+    description: Текст кнопки (опционально)
+  buttonLink:
+    type: string
+    required: false
+    description: Ссылка кнопки
+
+defaults:
+  title: О компании
+  content: Расскажите о вашей компании, её истории, миссии и ценностях.
+  image: ''
+  imagePosition: right
+  buttonText: ''
+  buttonLink: ''
+

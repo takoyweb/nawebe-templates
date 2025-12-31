@@ -1,0 +1,68 @@
+type: footer
+version: 1.0.0
+name: Footer Block
+description: Подвал сайта с ссылками и контактами
+category: footer
+is_active: true
+preview: /previews/blocks/footer.png
+
+schema:
+  companyName:
+    type: string
+    required: true
+    default: Моя компания
+    description: Название компании
+  description:
+    type: string
+    required: false
+    description: Краткое описание
+  links:
+    type: array
+    description: Ссылки в футере
+    items:
+      type: object
+      properties:
+        title:
+          type: string
+          required: true
+        url:
+          type: string
+          required: true
+  socialLinks:
+    type: object
+    description: Социальные сети
+    properties:
+      facebook:
+        type: string
+        format: url
+      instagram:
+        type: string
+        format: url
+      twitter:
+        type: string
+        format: url
+      linkedin:
+        type: string
+        format: url
+  copyright:
+    type: string
+    default: '© 2025 Все права защищены'
+    description: Копирайт
+
+defaults:
+  companyName: Моя компания
+  description: Создаем лучшие решения для вашего бизнеса
+  links:
+    - title: О нас
+      url: '#about'
+    - title: Услуги
+      url: '#services'
+    - title: Контакты
+      url: '#contact'
+  socialLinks:
+    facebook: ''
+    instagram: ''
+    twitter: ''
+    linkedin: ''
+  copyright: '© 2025 Все права защищены'
+

@@ -1,0 +1,62 @@
+type: contact
+version: 1.0.0
+name: Contact Block
+description: Блок с контактной формой
+category: forms
+is_active: true
+preview: /previews/blocks/contact.png
+
+schema:
+  title:
+    type: string
+    required: true
+    default: Свяжитесь с нами
+    description: Заголовок блока
+  subtitle:
+    type: string
+    required: false
+    default: Мы ответим в ближайшее время
+    description: Подзаголовок
+  showPhone:
+    type: boolean
+    default: true
+    description: Показывать поле телефона
+  showEmail:
+    type: boolean
+    default: true
+    description: Показывать поле email
+  showMessage:
+    type: boolean
+    default: true
+    description: Показывать поле сообщения
+  submitButtonText:
+    type: string
+    default: Отправить
+    description: Текст кнопки отправки
+  contactInfo:
+    type: object
+    description: Контактная информация
+    properties:
+      phone:
+        type: string
+        description: Телефон
+      email:
+        type: string
+        format: email
+        description: Email
+      address:
+        type: string
+        description: Адрес
+
+defaults:
+  title: Свяжитесь с нами
+  subtitle: Мы ответим в ближайшее время
+  showPhone: true
+  showEmail: true
+  showMessage: true
+  submitButtonText: Отправить
+  contactInfo:
+    phone: '+7 (999) 123-45-67'
+    email: info@example.com
+    address: г. Москва, ул. Примерная, д. 1
+
