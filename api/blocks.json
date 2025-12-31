@@ -1,0 +1,386 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2025-12-31T14:52:18.551Z",
+  "count": 5,
+  "blocks": [
+    {
+      "type": "about",
+      "version": "1.0.0",
+      "name": "About Block",
+      "description": "Блок \"О компании\" с текстом и изображением",
+      "category": "content",
+      "is_active": true,
+      "preview": "/previews/blocks/about.png",
+      "schema": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "default": "О компании",
+          "description": "Заголовок блока"
+        },
+        "content": {
+          "type": "string",
+          "required": true,
+          "default": "Расскажите о вашей компании",
+          "description": "Основной текст"
+        },
+        "image": {
+          "type": "string",
+          "format": "url",
+          "required": false,
+          "description": "Изображение"
+        },
+        "imagePosition": {
+          "type": "string",
+          "enum": [
+            "left",
+            "right"
+          ],
+          "default": "right",
+          "description": "Позиция изображения"
+        },
+        "buttonText": {
+          "type": "string",
+          "required": false,
+          "description": "Текст кнопки (опционально)"
+        },
+        "buttonLink": {
+          "type": "string",
+          "required": false,
+          "description": "Ссылка кнопки"
+        }
+      },
+      "defaults": {
+        "title": "О компании",
+        "content": "Расскажите о вашей компании, её истории, миссии и ценностях.",
+        "image": "",
+        "imagePosition": "right",
+        "buttonText": "",
+        "buttonLink": ""
+      }
+    },
+    {
+      "type": "contact",
+      "version": "1.0.0",
+      "name": "Contact Block",
+      "description": "Блок с контактной формой",
+      "category": "forms",
+      "is_active": true,
+      "preview": "/previews/blocks/contact.png",
+      "schema": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "default": "Свяжитесь с нами",
+          "description": "Заголовок блока"
+        },
+        "subtitle": {
+          "type": "string",
+          "required": false,
+          "default": "Мы ответим в ближайшее время",
+          "description": "Подзаголовок"
+        },
+        "showPhone": {
+          "type": "boolean",
+          "default": true,
+          "description": "Показывать поле телефона"
+        },
+        "showEmail": {
+          "type": "boolean",
+          "default": true,
+          "description": "Показывать поле email"
+        },
+        "showMessage": {
+          "type": "boolean",
+          "default": true,
+          "description": "Показывать поле сообщения"
+        },
+        "submitButtonText": {
+          "type": "string",
+          "default": "Отправить",
+          "description": "Текст кнопки отправки"
+        },
+        "contactInfo": {
+          "type": "object",
+          "description": "Контактная информация",
+          "properties": {
+            "phone": {
+              "type": "string",
+              "description": "Телефон"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "description": "Email"
+            },
+            "address": {
+              "type": "string",
+              "description": "Адрес"
+            }
+          }
+        }
+      },
+      "defaults": {
+        "title": "Свяжитесь с нами",
+        "subtitle": "Мы ответим в ближайшее время",
+        "showPhone": true,
+        "showEmail": true,
+        "showMessage": true,
+        "submitButtonText": "Отправить",
+        "contactInfo": {
+          "phone": "+7 (999) 123-45-67",
+          "email": "info@example.com",
+          "address": "г. Москва, ул. Примерная, д. 1"
+        }
+      }
+    },
+    {
+      "type": "footer",
+      "version": "1.0.0",
+      "name": "Footer Block",
+      "description": "Подвал сайта с ссылками и контактами",
+      "category": "footer",
+      "is_active": true,
+      "preview": "/previews/blocks/footer.png",
+      "schema": {
+        "companyName": {
+          "type": "string",
+          "required": true,
+          "default": "Моя компания",
+          "description": "Название компании"
+        },
+        "description": {
+          "type": "string",
+          "required": false,
+          "description": "Краткое описание"
+        },
+        "links": {
+          "type": "array",
+          "description": "Ссылки в футере",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "required": true
+              },
+              "url": {
+                "type": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "socialLinks": {
+          "type": "object",
+          "description": "Социальные сети",
+          "properties": {
+            "facebook": {
+              "type": "string",
+              "format": "url"
+            },
+            "instagram": {
+              "type": "string",
+              "format": "url"
+            },
+            "twitter": {
+              "type": "string",
+              "format": "url"
+            },
+            "linkedin": {
+              "type": "string",
+              "format": "url"
+            }
+          }
+        },
+        "copyright": {
+          "type": "string",
+          "default": "© 2025 Все права защищены",
+          "description": "Копирайт"
+        }
+      },
+      "defaults": {
+        "companyName": "Моя компания",
+        "description": "Создаем лучшие решения для вашего бизнеса",
+        "links": [
+          {
+            "title": "О нас",
+            "url": "#about"
+          },
+          {
+            "title": "Услуги",
+            "url": "#services"
+          },
+          {
+            "title": "Контакты",
+            "url": "#contact"
+          }
+        ],
+        "socialLinks": {
+          "facebook": "",
+          "instagram": "",
+          "twitter": "",
+          "linkedin": ""
+        },
+        "copyright": "© 2025 Все права защищены"
+      }
+    },
+    {
+      "type": "hero",
+      "version": "1.0.0",
+      "name": "Hero Block",
+      "description": "Главный баннер с заголовком, подзаголовком и изображением",
+      "category": "header",
+      "is_active": true,
+      "preview": "/previews/blocks/hero.png",
+      "schema": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "default": "Добро пожаловать",
+          "description": "Главный заголовок"
+        },
+        "subtitle": {
+          "type": "string",
+          "required": false,
+          "default": "Ваш успех начинается здесь",
+          "description": "Подзаголовок"
+        },
+        "buttonText": {
+          "type": "string",
+          "required": false,
+          "default": "Начать",
+          "description": "Текст кнопки"
+        },
+        "buttonLink": {
+          "type": "string",
+          "required": false,
+          "default": "#contact",
+          "description": "Ссылка кнопки"
+        },
+        "backgroundImage": {
+          "type": "string",
+          "format": "url",
+          "required": false,
+          "description": "Фоновое изображение"
+        },
+        "alignment": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right"
+          ],
+          "default": "center",
+          "description": "Выравнивание текста"
+        },
+        "height": {
+          "type": "string",
+          "enum": [
+            "small",
+            "medium",
+            "large",
+            "full"
+          ],
+          "default": "large",
+          "description": "Высота блока"
+        }
+      },
+      "defaults": {
+        "title": "Добро пожаловать",
+        "subtitle": "Ваш успех начинается здесь",
+        "buttonText": "Начать",
+        "buttonLink": "#contact",
+        "alignment": "center",
+        "height": "large",
+        "backgroundImage": ""
+      }
+    },
+    {
+      "type": "services",
+      "version": "1.0.0",
+      "name": "Services Block",
+      "description": "Блок с услугами/сервисами в виде карточек",
+      "category": "content",
+      "is_active": true,
+      "preview": "/previews/blocks/services.png",
+      "schema": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "default": "Наши услуги",
+          "description": "Заголовок блока"
+        },
+        "subtitle": {
+          "type": "string",
+          "required": false,
+          "default": "Что мы предлагаем",
+          "description": "Подзаголовок блока"
+        },
+        "columns": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4,
+          "default": 3,
+          "description": "Количество колонок"
+        },
+        "items": {
+          "type": "array",
+          "required": true,
+          "description": "Список услуг",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "required": true,
+                "description": "Название услуги"
+              },
+              "description": {
+                "type": "string",
+                "required": true,
+                "description": "Описание услуги"
+              },
+              "icon": {
+                "type": "string",
+                "required": false,
+                "description": "Иконка (URL или emoji)"
+              },
+              "image": {
+                "type": "string",
+                "format": "url",
+                "required": false,
+                "description": "Изображение услуги"
+              }
+            }
+          }
+        }
+      },
+      "defaults": {
+        "title": "Наши услуги",
+        "subtitle": "Что мы предлагаем",
+        "columns": 3,
+        "items": [
+          {
+            "title": "Услуга 1",
+            "description": "Описание услуги",
+            "icon": "🎯",
+            "image": ""
+          },
+          {
+            "title": "Услуга 2",
+            "description": "Описание услуги",
+            "icon": "💼",
+            "image": ""
+          },
+          {
+            "title": "Услуга 3",
+            "description": "Описание услуги",
+            "icon": "🚀",
+            "image": ""
+          }
+        ]
+      }
+    }
+  ]
+}
